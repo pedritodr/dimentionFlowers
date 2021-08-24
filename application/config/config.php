@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-//if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";} else{$ssl_set = "";}
-//$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
-$config['base_url'] = 'http://localhost/flowers';
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") {
+    $ssl_set = "s";
+} else {
+    $ssl_set = "";
+}
+$config['base_url'] = 'http' . $ssl_set . '://' . $_SERVER['HTTP_HOST'];
+//$config['base_url'] = 'http://localhost/flowers';
 
 /*
 |--------------------------------------------------------------------------
@@ -311,9 +315,9 @@ $config['cache_query_string'] = FALSE;
 $string = ['1,2,3,4,5,6,7,8,9,a,A,b,B,c,C,d,D,f,F,g,G,h,H,j,J,k,K,l,L,m,M,n,N,p,P,q,Q,r,R,s,S'];
 $length = 32;
 $result_string = "";
-for($i = 0;$i<$length;$i++){
-    $index = rand(0,count($string)-1);
-    $result_string.= $string[$index];
+for ($i = 0; $i < $length; $i++) {
+    $index = rand(0, count($string) - 1);
+    $result_string .= $string[$index];
 }
 $config['encryption_key'] = $result_string;
 
