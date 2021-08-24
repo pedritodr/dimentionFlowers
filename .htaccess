@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond $1 !^(index\.php|assets|robots\.txt)
+    RewriteRule ^(.*)$ index.php/$1 [L]
+	Options -Indexes
+    IndexIgnore * 
+	
+	##RewriteCond %{REQUEST_URI} /uploads/*
+	##RewriteRule ^(.*)$ http://%{SERVER_NAME} [R,L]
+	
+	##RewriteCond %{REQUEST_URI} /assets/*
+	##RewriteRule ^(.*)$ http://%{SERVER_NAME} [R,L]
+</IfModule>
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access plus 1 month"
+</IfModule>
+## EXPIRES CACHING ##
