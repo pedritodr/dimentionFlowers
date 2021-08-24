@@ -13,5 +13,5 @@ pipelines:
           - apt-get update -y
           - apt-get install -y ssh
           - apt-get install sshpass
-          - cat ./deploy.sh | sshpass -p '1qazxsw23edcvfr4' ssh -o StrictHostKeyChecking=no -t -t root@104.236.0.183
+          - cat ./deploy.sh | sshpass -p '1qazxsw23edcvfr4' ssh -o StrictHostKeyChecking=no -t -t root@46.101.161.172
           - echo "Deploy step finished"
