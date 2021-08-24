@@ -124,7 +124,7 @@
                                                     <?php } ?>
                                                     <li> <a onclick="fecha_vuelo('<?= $item->date_time_reception; ?>','<?= $item->request_id ?>')" style="cursor:pointer;"><i class="fa fa-calendar"></i> <?= "Actualizar fecha de vuelo" ?></a>
                                                     </li>
-                                                    <?php if ($item->state !== 2) { ?>
+                                                    <?php if ($item->state != 2) { ?>
                                                         <li> <a onclick="handleUpdatePo('<?= $item->request_id ?>')" style="cursor:pointer;"><i class="fa fa-refresh"></i> <?= "Actualizar PO" ?></a>
                                                         </li>
                                                         <li> <a onclick="handleDeletePo('<?= $item->request_id ?>')" style="cursor:pointer;"><i class="fa fa-trash-o"></i> <?= "Eliminar PO" ?></a>

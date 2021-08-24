@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | If this is not set then CodeIgniter will try guess the protocol, domain
 | and path to your installation. However, you should always configure this
 | explicitly and never rely on auto-guessing, especially in production
-| environments.ok
+| environments.
 |
 */
 if (ENVIRONMENT == "development") {
