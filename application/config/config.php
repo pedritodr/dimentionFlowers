@@ -20,12 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 if (ENVIRONMENT == "development") {
     $config['base_url'] = 'http://localhost/flowers';
 } else {
-    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") {
-        $ssl_set = "s";
-    } else {
-        $ssl_set = "";
-    }
-    $config['base_url'] = 'http' . $ssl_set . '://' . $_SERVER['HTTP_HOST'];
+    $config['base_url'] = 'https://' . $_SERVER['HTTP_HOST'];
 }
 
 /*
