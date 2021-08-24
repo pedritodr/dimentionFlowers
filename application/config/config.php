@@ -17,8 +17,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | environments.
 |
 */
-var_dump(ENVIRONMENT);
-die();
 if (ENVIRONMENT == "development") {
     $config['base_url'] = 'http://localhost/flowers';
 } else {

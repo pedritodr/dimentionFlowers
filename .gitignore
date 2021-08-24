@@ -9,7 +9,7 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 
-##!application/*/.htaccess
+!application/*/.htaccess
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
@@ -21,7 +21,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /uploads/*
 !/uploads/.gitkeep
 
-
+application/config/config.php
 
 # VsCode
 .vscode/
