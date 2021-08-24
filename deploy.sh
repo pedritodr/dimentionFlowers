@@ -1,5 +1,5 @@
 echo "Deploy script started"
-cd /var/www/html/dimention
+cd /var/www/html/dimentionflowwers
 git pull origin master
 echo "Deploy script finished execution"
 exit
