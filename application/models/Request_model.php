@@ -189,7 +189,7 @@ class Request_model extends CI_Model
         $this->db->from('request');
         $this->db->where('request.date_time_reception', $date);
         $this->db->group_by('request.date_time_reception');
-        $this->db->where('request.state!=', 0);
+        $this->db->where('request.state >', 0);
 
 
         $query = $this->db->get();
@@ -203,7 +203,7 @@ class Request_model extends CI_Model
         $this->db->from('request');
         $this->db->where('request.date_time_reception', $date);
         $this->db->where('request.cliente_id', $cliente_id);
-        $this->db->where('request.state !=', 0);
+        $this->db->where('request.state >', 0);
 
 
         $query = $this->db->get();
