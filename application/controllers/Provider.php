@@ -287,17 +287,17 @@ class Provider extends CI_Controller
         $object_provider = $this->provider->get_by_id($provider_id);
         if ($object_provider) {
             //establecer reglas de validacion
-
-            $this->form_validation->set_rules('variety', translate('varieties_lang'), 'required');
-
-            if ($this->form_validation->run() == FALSE) { //si alguna de las reglas de validacion fallaron
-                $this->response->set_message(validation_errors(), ResponseMessage::ERROR);
-                redirect("provider/products_add/" . $provider_id, "location", 301);
+            if ($products) {
+                if (count($products) > 0) {
+                    $this->provider->create_provider_products_array($provider_id, $products);
+                    $this->response->set_message(translate("data_saved_ok"), ResponseMessage::SUCCESS);
+                    redirect("provider/products/" . $provider_id, "location", 301);
+                } else {
+                    $this->response->set_message("Selecciones las variedades", ResponseMessage::ERROR);
+                    redirect("provider/products/" . $provider_id, "location", 301);
+                }
             } else {
-
-                $this->provider->create_provider_products_array($provider_id, $products);
-
-                $this->response->set_message(translate("data_saved_ok"), ResponseMessage::SUCCESS);
+                $this->response->set_message("Selecciones las variedades", ResponseMessage::ERROR);
                 redirect("provider/products/" . $provider_id, "location", 301);
             }
         } else {
